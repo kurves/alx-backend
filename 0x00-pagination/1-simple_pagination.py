@@ -1,7 +1,19 @@
+"""
+This module provides pagination based on the current page and page size.
+"""
+
 import csv
 import math
-from typing import List
+from typing import List, Tuple
 
+
+def index_range(page: int, page_size: int) -> Tuple[int, int]:
+    """
+    Returns a tuple of size two containing a start index and an end index
+    """
+    start_index = (page - 1) * page_size
+    end_index = page * page_size
+    return start_index, end_index
 
 class Server:
     """Server class to paginate a database of popular baby names.
@@ -24,11 +36,3 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
             pass
-    
-    def index_range(page: int, page_size: int) -> Tuple[int, int]:
-        """
-        Returns a tuple of size two containing a start index and an end index
-        """
-        start_index = (page - 1) * page_size
-        end_index = page * page_size
-        return start_index, end_index
