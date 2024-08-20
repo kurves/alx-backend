@@ -4,6 +4,7 @@
 
 from base_caching import BaseCaching
 
+
 class FIFOCache(BaseCaching):
     """ FIFOCache defines a caching system that follows FIFO rule """
 
